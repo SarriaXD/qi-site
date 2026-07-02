@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Qi Wang — Software Engineer · Winnipeg</title>
+<meta name="description" content="Qi Wang (SarriaXD) — design-minded software engineer. Mobile-first, full-stack, and a camera in hand." />
+<meta name="theme-color" content="#05070c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<!-- ============ preloader ============ -->
+<div id="preloader">
+  <div class="boot mono" id="bootLog"></div>
+  <div class="pct mono"><span id="pctNum">0</span><i>%</i></div>
+</div>
+
+<!-- ============ webgl ============ -->
+<canvas id="gl"></canvas>
+<div class="noise" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ============ nav ============ -->
+<header class="nav" id="nav">
+  <a class="logo mono" href="#hero" id="logo" data-hover>~/qi<span class="blink">▊</span></a>
+  <nav class="nav-links mono">
+    <a href="#whoami" data-hover>whoami</a>
+    <a href="#life" data-hover>life</a>
+    <a href="#work" data-hover>work</a>
+    <a href="#contact" data-hover>say-hi</a>
+  </nav>
+  <a class="chip mono" href="#whoami" data-hover><span class="dot"></span>SWE&nbsp;@&nbsp;BLUE&nbsp;CROSS</a>
+</header>
+
+<main>
+  <!-- ============ 01 hero ============ -->
+  <section class="hero" id="hero">
+    <p class="eyebrow mono reveal">01 — hello<span class="sep">/</span>SOFTWARE ENGINEER · WINNIPEG, CANADA 🇨🇦</p>
+    <h1 class="hero-title" aria-label="Qi Wang">
+      <span class="line"><span class="line-inner" data-split>QI</span></span>
+      <span class="line"><span class="line-inner accent" data-split>WANG</span></span>
+    </h1>
+    <div class="hero-ghost" aria-hidden="true">SARRIA</div>
+    <div class="hero-sub">
+      <p class="roles mono">crafting with <span class="role-word" id="roleWord">SwiftUI</span></p>
+      <p class="hero-bio">Design-minded engineer. Native-feeling products for iOS, Android &amp; web —<br/>and a camera for everything in between.</p>
+    </div>
+    <div class="scroll-cue mono"><span class="cue-line"></span>scroll to explore</div>
+    <div class="ticker mono" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <span>SWIFT · SWIFTUI · FLUTTER · KOTLIN · COMPOSE · TYPESCRIPT · REACT · THREE.JS · NODE · GO · RUST · ON-DEVICE AI ·&nbsp;</span>
+        <span>SWIFT · SWIFTUI · FLUTTER · KOTLIN · COMPOSE · TYPESCRIPT · REACT · THREE.JS · NODE · GO · RUST · ON-DEVICE AI ·&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 manifesto ============ -->
+  <section class="manifesto" id="manifesto">
+    <p class="eyebrow mono">02 — ~/manifesto</p>
+    <div class="mani-stage">
+      <p class="mani-line" data-line>Small <em>details</em> carry the experience.</p>
+      <p class="mani-line" data-line><em>Motion</em> is meaning — never decoration.</p>
+      <p class="mani-line" data-line>The best system is the one you <em>don't notice</em>.</p>
+      <p class="mani-line" data-line><em>Shipping</em> is the only honest critic.</p>
+    </div>
+    <div class="mani-idx mono"><span id="maniIdx">01</span>/04</div>
+  </section>
+
+  <!-- ============ 03 whoami ============ -->
+  <section class="whoami" id="whoami">
+    <div class="who-left">
+      <p class="eyebrow mono">03 — ~/whoami</p>
+      <h2>Engineer,<br/>with taste.</h2>
+      <p class="who-bio">Mobile-first software engineer in Winnipeg 🇨🇦, currently building at Blue&nbsp;Cross. I ship native iOS &amp; Android, cross-platform Flutter, and the web &amp; backends that power them. I care about the last 4&nbsp;pixels.</p>
+      <div class="who-chips">
+        <span class="chip mono" data-hover>💼 SWE @ Blue Cross</span>
+        <span class="chip mono" data-hover>📍 Winnipeg, MB</span>
+        <span class="chip mono" data-hover>🛰 github/SarriaXD</span>
+        <span class="chip mono" data-hover>☕ mobile · web · backend</span>
+      </div>
+    </div>
+    <div class="terminal glass" id="terminal" data-hover>
+      <div class="term-bar">
+        <i class="tb r"></i><i class="tb y"></i><i class="tb g"></i>
+        <span class="term-title mono">sarria@winnipeg — zsh</span>
+      </div>
+      <pre class="term-body mono" id="termBody"></pre>
+    </div>
+  </section>
+
+  <!-- ============ 04 life / gallery ============ -->
+  <section class="gallery" id="life">
+    <div class="gallery-head">
+      <p class="eyebrow mono">04 — ~/life · photography</p>
+      <h2>Beyond the screen.</h2>
+      <p class="gal-sub">Engineer by trade, explorer at heart. Beyond the code — mountains, lakes, and the people I love.</p>
+    </div>
+    <div class="captions">
+      <div class="caption" data-cap="0">
+        <span class="cap-idx mono">01 / 03</span>
+        <h3>Lake Louise</h3>
+        <p>Canoeing the glacier water · Banff National Park</p>
+        <span class="coords mono">51.4254° N, 116.1773° W</span>
+      </div>
+      <div class="caption" data-cap="1">
+        <span class="cap-idx mono">02 / 03</span>
+        <h3>Moraine Lake</h3>
+        <p>Valley of the Ten Peaks · with my favourite person</p>
+        <span class="coords mono">51.3217° N, 116.1860° W</span>
+      </div>
+      <div class="caption" data-cap="2">
+        <span class="cap-idx mono">03 / 03</span>
+        <h3>Sulphur Mountain</h3>
+        <p>Above the Bow Valley · Banff Gondola summit</p>
+        <span class="coords mono">51.1152° N, 115.5731° W</span>
+      </div>
+    </div>
+    <div class="gal-hint mono">hover the photos ✦</div>
+    <div class="gallery-fallback">
+      <figure><img src="assets/banff-1.jpg" alt="Canoeing on Lake Louise" /><figcaption class="mono">Lake Louise</figcaption></figure>
+      <figure><img src="assets/banff-3.jpg" alt="Moraine Lake" /><figcaption class="mono">Moraine Lake</figcaption></figure>
+      <figure><img src="assets/banff-5.jpg" alt="Sulphur Mountain summit" /><figcaption class="mono">Sulphur Mountain</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============ 05 stack ============ -->
+  <section class="stack" id="stack">
+    <p class="eyebrow mono">05 — ~/stack</p>
+    <h2>Tools of trade.</h2>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <h4 class="mono">// mobile — the home turf</h4>
+        <div class="chips">
+          <span class="chip mono" data-hover>Swift</span><span class="chip mono" data-hover>SwiftUI</span><span class="chip mono" data-hover>Flutter</span><span class="chip mono" data-hover>Dart</span><span class="chip mono" data-hover>Kotlin</span><span class="chip mono" data-hover>Jetpack Compose</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4 class="mono">// web</h4>
+        <div class="chips">
+          <span class="chip mono" data-hover>TypeScript</span><span class="chip mono" data-hover>React</span><span class="chip mono" data-hover>Astro</span><span class="chip mono" data-hover>Three.js</span><span class="chip mono" data-hover>GSAP</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4 class="mono">// backend & beyond</h4>
+        <div class="chips">
+          <span class="chip mono" data-hover>Node.js</span><span class="chip mono" data-hover>Spring</span><span class="chip mono" data-hover>Go</span><span class="chip mono" data-hover>Python</span><span class="chip mono" data-hover>Rust</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 work ============ -->
+  <section class="work" id="work">
+    <div class="work-pin">
+      <div class="work-head">
+        <p class="eyebrow mono">06 — ~/work · selected repos</p>
+        <h2>Things I've shipped.</h2>
+        <p class="work-hint mono">keep scrolling →</p>
+      </div>
+      <div class="work-track" id="workTrack">
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/Baobao" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">01</span>
+          <h3>Baobao</h3>
+          <p>Native iOS front-end for cc-bot — a personal AI chat client with liquid-glass UI.</p>
+          <div class="wc-tags mono"><span>Swift</span><span>SwiftUI</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/cc-bot" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">02</span>
+          <h3>cc-bot</h3>
+          <p>Multi-user chat server powering bot.sarria.ca — channels, bots, artifacts.</p>
+          <div class="wc-tags mono"><span>TypeScript</span><span>Node</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/Chat" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">03</span>
+          <h3>Chat</h3>
+          <p>Open-source SwiftUI chat framework — custom bubbles, media pickers, the works.</p>
+          <div class="wc-tags mono"><span>Swift</span><span>OSS</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/QiAgent" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">04</span>
+          <h3>QiAgent</h3>
+          <p>On-device LLM notebook. AI that never leaves your phone.</p>
+          <div class="wc-tags mono"><span>Swift</span><span>on-device AI</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/liquid-glass-compose" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">05</span>
+          <h3>liquid-glass-compose</h3>
+          <p>Liquid-glass component library for Jetpack Compose.</p>
+          <div class="wc-tags mono"><span>Kotlin</span><span>Compose</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/manitoba_driving_test" target="_blank" rel="noreferrer">
+          <span class="wc-idx mono">06</span>
+          <h3>manitoba driving test</h3>
+          <p>Driving-test prep app for Manitoba — Flutter, shipped on iOS &amp; Android.</p>
+          <div class="wc-tags mono"><span>Flutter</span><span>Dart</span></div>
+          <span class="wc-arrow">↗</span>
+          <span class="glare"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 contact ============ -->
+  <section class="contact" id="contact">
+    <p class="eyebrow mono">07 — ~/contact</p>
+    <h2 class="contact-title" data-split-words>Let's build something.</h2>
+    <p class="contact-sub">Engineering, design, or just trading photo spots —<br/>my inbox is always open. <span class="mono accent-text">✦</span></p>
+    <a class="cta glass mono" id="cta" href="mailto:sarria.qi.wang@gmail.com" data-hover>say hi ↗</a>
+    <div class="contact-links mono">
+      <a href="https://github.com/SarriaXD" target="_blank" rel="noreferrer" data-hover>GitHub</a>
+      <a href="https://www.linkedin.com/in/qi-wang-sarria" target="_blank" rel="noreferrer" data-hover>LinkedIn</a>
+      <a href="mailto:sarria.qi.wang@gmail.com" data-hover>Email</a>
+    </div>
+    <footer class="foot mono">
+      <span>© 2026 Qi Wang · Winnipeg</span>
+      <span class="foot-mid">three.js + gsap + taste</span>
+      <span>◐ particles: 12,000 · rendered with love ❤️</span>
+    </footer>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script type="module" src="app.js?v=5"></script>
+</body>
+</html>
