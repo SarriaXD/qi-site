@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="1080" viewBox="0 0 780 1080" fill="none">
+  <defs>
+    <linearGradient id="body" x1="118" y1="136" x2="674" y2="1022" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7FAFF" stop-opacity=".94"/>
+      <stop offset=".42" stop-color="#BBDFFF" stop-opacity=".72"/>
+      <stop offset=".76" stop-color="#9D93FF" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#FF9AC8" stop-opacity=".2"/>
+    </linearGradient>
+    <radialGradient id="face" cx="0" cy="0" r="1" gradientTransform="translate(336 230) rotate(50) scale(238 218)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4FDFF"/>
+      <stop offset=".58" stop-color="#CBE9FF" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#9B93F2" stop-opacity=".55"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-30%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feColorMatrix in="b" values="0 0 0 0 0.46 0 0 0 0 0.86 0 0 0 0 1 0 0 0 .6 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+  <ellipse cx="390" cy="1014" rx="258" ry="30" fill="#83E8FF" fill-opacity=".13" filter="url(#soft)"/>
+  <path d="M286 166c15-79 68-127 134-127 73 0 127 54 137 139 8 74-8 152-45 196-27 32-63 54-103 54-43 0-82-22-110-59-33-44-44-129-13-203Z" fill="url(#face)" filter="url(#glow)"/>
+  <path d="M289 152c21-85 81-126 145-112 74 16 117 83 114 166-46-15-91-41-122-82-21 40-66 69-137 88-8-22-8-38 0-60Z" fill="#091A2B" fill-opacity=".84"/>
+  <path d="M270 426c39-41 83-61 131-61 51 0 100 21 144 65 49 49 91 165 119 346 14 87 24 177 29 268H88c6-108 20-208 41-300 37-164 83-270 141-318Z" fill="url(#body)" filter="url(#glow)"/>
+  <path d="M383 421c-30 65-38 146-24 242l34 242 42-247c17-100 12-179-17-237l-35 0Z" fill="#E9FBFF" fill-opacity=".27"/>
+  <path d="M169 666c90 49 163 76 219 81 68 6 147-21 237-80" stroke="#F1FCFF" stroke-opacity=".36" stroke-width="3"/>
+  <path d="M126 1002c131-50 309-59 538 0" stroke="#8CEAFF" stroke-opacity=".4" stroke-width="2"/>
+  <g opacity=".68" fill="#E8FAFF">
+    <circle cx="238" cy="562" r="4"/>
+    <circle cx="534" cy="486" r="3"/>
+    <circle cx="596" cy="728" r="5"/>
+    <circle cx="202" cy="792" r="3"/>
+    <circle cx="448" cy="904" r="4"/>
+  </g>
+</svg>
+

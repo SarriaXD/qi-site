@@ -1,246 +1,394 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Qi Wang — Software Engineer · Winnipeg</title>
-<meta name="description" content="Qi Wang (SarriaXD) — design-minded software engineer. Mobile-first, full-stack, and a camera in hand." />
-<meta name="theme-color" content="#05070c" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
-<script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js" } }
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#03070f" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Qi Wang is a full-stack application developer in Winnipeg, creating reliable web, backend, mobile, and AI products." />
+  <meta property="og:title" content="Qi Wang — Application Developer" />
+  <meta property="og:description" content="I turn complex systems into products that feel simple." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://me.sarria.ca/" />
+  <link rel="canonical" href="https://me.sarria.ca/" />
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css?v=20260730-3" />
+  <link rel="stylesheet" href="nojs.css?v=20260730-3" />
+  <title>Qi Wang — Application Developer · Winnipeg</title>
 </head>
 <body>
+  <a class="skip-link" href="#quick-profile">Skip to the quick profile</a>
 
-<!-- ============ preloader ============ -->
-<div id="preloader">
-  <div class="boot mono" id="bootLog"></div>
-  <div class="pct mono"><span id="pctNum">0</span><i>%</i></div>
-</div>
+  <div class="world" aria-hidden="true">
+    <canvas id="storyCanvas"></canvas>
+    <div class="aurora aurora-a"></div>
+    <div class="aurora aurora-b"></div>
+    <div class="light-field" id="lightField"></div>
+    <div class="scene-vignette"></div>
+    <div class="grain"></div>
+  </div>
 
-<!-- ============ webgl ============ -->
-<canvas id="gl"></canvas>
-<div class="noise" aria-hidden="true"></div>
-<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="load-veil" id="loadVeil" aria-hidden="true">
+    <div class="load-mark">
+      <span>Q</span>
+      <i></i>
+    </div>
+    <p>Gathering light</p>
+  </div>
 
-<!-- ============ nav ============ -->
-<header class="nav" id="nav">
-  <a class="logo mono" href="#hero" id="logo" data-hover>~/qi<span class="blink">▊</span></a>
-  <nav class="nav-links mono">
-    <a href="#whoami" data-hover>whoami</a>
-    <a href="#life" data-hover>life</a>
-    <a href="#work" data-hover>work</a>
-    <a href="#contact" data-hover>say-hi</a>
+  <header class="topbar glass-lens">
+    <a class="brand pressable" href="#arrival" aria-label="Qi Wang — back to the beginning">
+      <span class="brand-mark">Q</span>
+      <span class="brand-name">Qi Wang</span>
+    </a>
+
+    <div class="chapter-readout" aria-live="polite">
+      <span class="chapter-number" id="chapterNumber">00</span>
+      <span class="chapter-slash">/</span>
+      <span class="chapter-name" id="chapterName">Arrival</span>
+    </div>
+
+    <button class="icon-button pressable" id="settingsButton" type="button" aria-label="Open experience settings" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 7.5h14M8.5 12h7M10.5 16.5h3" />
+      </svg>
+    </button>
+  </header>
+
+  <div class="story-status glass-lens" aria-label="Story resonance">
+    <span class="status-pulse" aria-hidden="true"></span>
+    <span id="resonanceLabel">river asleep</span>
+    <strong><span id="memoryCount">0</span>/6</strong>
+  </div>
+
+  <main id="story">
+    <section class="chapter chapter-hero" id="arrival" data-chapter="0" data-name="Arrival">
+      <div class="chapter-stage hero-stage">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <span class="orbit orbit-a"></span>
+          <span class="orbit orbit-b"></span>
+          <span class="coordinate coordinate-a">49.8954° N</span>
+          <span class="coordinate coordinate-b">97.1385° W</span>
+        </div>
+
+        <div class="portrait-stage" data-tilt>
+          <div class="portrait-halo"></div>
+          <div class="portrait-lens glass-lens">
+            <div class="portrait-rim"></div>
+          </div>
+          <img
+            class="portrait-cutout"
+            src="assets/banff-portrait-test.png"
+            alt=""
+            width="1020"
+            height="1216"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="portrait-floor"></div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow reveal-line"><span>Winnipeg · Canada</span><i></i><span>2026</span></p>
+          <h1 aria-label="Hi, I am Qi Wang">
+            <span class="hero-small">Hi, I’m</span>
+            <span class="hero-name">Qi</span>
+            <span class="hero-name hero-name-shift">Wang.</span>
+          </h1>
+          <p class="hero-thesis">I turn complex systems into products that <em>feel simple.</em></p>
+        </div>
+
+        <div class="scroll-invitation">
+          <span class="finger-trace" aria-hidden="true"><i></i></span>
+          <span>Scroll to conduct the light</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter-signal" id="signal" data-chapter="1" data-name="Signal">
+      <div class="chapter-stage content-stage">
+        <div class="chapter-kicker">
+          <span>01</span>
+          <p>The signal</p>
+        </div>
+
+        <div class="kinetic-word" aria-hidden="true">
+          <span>SIMPLE</span>
+          <span>USEFUL</span>
+          <span>HUMAN</span>
+        </div>
+
+        <article class="story-card glass-lens" id="quick-profile" data-tilt tabindex="-1">
+          <p class="card-label">About Qi</p>
+          <h2>Engineer by practice.<br /><em>Translator</em> by instinct.</h2>
+          <p>
+            I’m an Intermediate Application Developer at Manitoba Blue Cross with more than six years of experience across web, backend, and mobile.
+          </p>
+          <p>
+            I like the moment a tangled requirement becomes a clear interface, a calm API, or a system people can trust.
+          </p>
+          <div class="fact-row" aria-label="Quick facts">
+            <span><strong>6+</strong> years building</span>
+            <span><strong>4</strong> product surfaces</span>
+            <span><strong>1</strong> rule: make it useful</span>
+          </div>
+          <p class="chinese-note" lang="zh-Hans">把复杂，做得简单、可靠，而且真正有用。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter chapter-trajectory" id="trajectory" data-chapter="2" data-name="Trajectory">
+      <div class="chapter-stage trajectory-stage">
+        <div class="chapter-kicker">
+          <span>02</span>
+          <p>The trajectory</p>
+        </div>
+
+        <div class="trajectory-intro">
+          <h2>A nonlinear path.<br />One clear direction.</h2>
+          <p>Each chapter taught me a different way to make complicated things understandable.</p>
+        </div>
+
+        <div class="journey glass-lens" aria-label="Career and education journey">
+          <div class="journey-track" aria-hidden="true"><i id="journeyFill"></i></div>
+
+          <article class="journey-stop is-active" data-stop="0">
+            <span class="stop-dot"></span>
+            <p class="stop-meta">Foundation · Shandong University</p>
+            <h3>Pharmacy</h3>
+            <p>Precision, responsibility, and a respect for systems where details matter.</p>
+          </article>
+
+          <article class="journey-stop" data-stop="1">
+            <span class="stop-dot"></span>
+            <p class="stop-meta">First systems · Shenzhen &amp; Shanghai</p>
+            <h3>Software development</h3>
+            <p>From business requirements to production software, learning the full shape of delivery.</p>
+          </article>
+
+          <article class="journey-stop" data-stop="2">
+            <span class="stop-dot"></span>
+            <p class="stop-meta">Global stories · The Walt Disney Company</p>
+            <h3>Software at scale</h3>
+            <p>Building inside a world where technology supports experiences people remember.</p>
+          </article>
+
+          <article class="journey-stop" data-stop="3">
+            <span class="stop-dot"></span>
+            <p class="stop-meta">New intelligence · University of Winnipeg</p>
+            <h3>Artificial Intelligence</h3>
+            <p>Expanding the toolkit with an AI diploma and a focus on useful, grounded applications.</p>
+          </article>
+
+          <article class="journey-stop" data-stop="4">
+            <span class="stop-dot"></span>
+            <p class="stop-meta">Now · Manitoba Blue Cross</p>
+            <h3>Application development</h3>
+            <p>Creating reliable products for people in Manitoba, since July 2025.</p>
+          </article>
+        </div>
+
+        <p class="trajectory-footnote">Volunteer full-stack work with T.R.SPA.</p>
+      </div>
+    </section>
+
+    <section class="chapter chapter-craft" id="craft" data-chapter="3" data-name="Craft">
+      <div class="chapter-stage craft-stage">
+        <div class="chapter-kicker">
+          <span>03</span>
+          <p>The craft</p>
+        </div>
+
+        <div class="craft-title">
+          <h2>One product.<br />Every layer.</h2>
+          <p>Scroll through the system. Move your finger to bend the constellation.</p>
+        </div>
+
+        <div class="skill-orbit" aria-label="Technical focus">
+          <article class="skill-cluster glass-lens is-active" data-skill="0" data-tilt>
+            <span class="skill-index">A</span>
+            <p class="card-label">Interface</p>
+            <h3>Web systems</h3>
+            <p>React · Next.js · TypeScript · JavaScript · HTML · CSS · Tailwind</p>
+          </article>
+
+          <article class="skill-cluster glass-lens" data-skill="1" data-tilt>
+            <span class="skill-index">B</span>
+            <p class="card-label">Infrastructure</p>
+            <h3>Backend pulse</h3>
+            <p>Java · Spring Boot · REST · WebSocket · RabbitMQ · Redis · SQL</p>
+          </article>
+
+          <article class="skill-cluster glass-lens" data-skill="2" data-tilt>
+            <span class="skill-index">C</span>
+            <p class="card-label">In your hand</p>
+            <h3>Mobile touch</h3>
+            <p>Android · Kotlin · Jetpack Compose · Flutter</p>
+          </article>
+
+          <article class="skill-cluster glass-lens" data-skill="3" data-tilt>
+            <span class="skill-index">D</span>
+            <p class="card-label">New capability</p>
+            <h3>Intelligent tools</h3>
+            <p>Python · RAG · OpenAI API · AWS · Docker · CI/CD</p>
+          </article>
+        </div>
+
+        <div class="craft-meter" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter-field" id="field-notes" data-chapter="4" data-name="Field notes">
+      <div class="chapter-stage field-stage">
+        <div class="chapter-kicker">
+          <span>04</span>
+          <p>Field notes</p>
+        </div>
+
+        <div class="field-heading">
+          <p class="card-label">What guides the work</p>
+          <h2>Quiet systems.<br />Visible care.</h2>
+        </div>
+
+        <div class="principle-stack">
+          <article class="principle glass-lens" data-principle="0" data-tilt>
+            <span>01</span>
+            <h3>Simple is earned.</h3>
+            <p>A clear product is usually sitting on top of disciplined engineering.</p>
+          </article>
+          <article class="principle glass-lens" data-principle="1" data-tilt>
+            <span>02</span>
+            <h3>Reliable is a feeling.</h3>
+            <p>Fast feedback, predictable behavior, and thoughtful failure states build trust.</p>
+          </article>
+          <article class="principle glass-lens" data-principle="2" data-tilt>
+            <span>03</span>
+            <h3>Useful wins.</h3>
+            <p>The best technology disappears into the thing a person came to do.</p>
+          </article>
+        </div>
+
+        <a class="github-ribbon glass-lens pressable" href="https://github.com/SarriaXD" target="_blank" rel="noopener noreferrer">
+          <span>Explore the work on GitHub</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="chapter chapter-contact" id="open-channel" data-chapter="5" data-name="Open channel">
+      <div class="chapter-stage contact-stage">
+        <div class="chapter-kicker">
+          <span>05</span>
+          <p>Open channel</p>
+        </div>
+
+        <div class="contact-orb" aria-hidden="true">
+          <i></i><i></i><i></i>
+          <span>♥</span>
+        </div>
+
+        <div class="contact-copy">
+          <p class="card-label">The river is awake</p>
+          <h2>Let’s make complex things <em>feel simple.</em></h2>
+          <p>Engineering, product thinking, or an interesting idea—I’d love to hear about it.</p>
+
+          <div class="contact-actions">
+            <a class="primary-action glass-lens pressable" href="mailto:sarria.qi.wang@gmail.com">
+              <span>Start a conversation</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
+            </a>
+            <div class="social-actions">
+              <a class="glass-lens pressable" href="https://github.com/SarriaXD" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="glass-lens pressable" href="https://www.linkedin.com/in/qi-wang-793a562a7" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <span>© 2026 Qi Wang</span>
+          <span>Winnipeg, Canada</span>
+          <button class="text-button" id="replayButton" type="button">Replay the story</button>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <nav class="story-dock glass-lens" aria-label="Story chapters">
+    <span class="dock-current" id="dockCurrent">Arrival</span>
+    <div class="dock-track" id="dockTrack">
+      <div class="dock-progress" id="dockProgress"></div>
+      <button class="dock-dot is-active" type="button" data-scroll-to="arrival" aria-label="Go to Arrival" aria-current="step"></button>
+      <button class="dock-dot" type="button" data-scroll-to="signal" aria-label="Go to Signal"></button>
+      <button class="dock-dot" type="button" data-scroll-to="trajectory" aria-label="Go to Trajectory"></button>
+      <button class="dock-dot" type="button" data-scroll-to="craft" aria-label="Go to Craft"></button>
+      <button class="dock-dot" type="button" data-scroll-to="field-notes" aria-label="Go to Field notes"></button>
+      <button class="dock-dot" type="button" data-scroll-to="open-channel" aria-label="Go to Open channel"></button>
+      <button
+        class="dock-puck"
+        id="dockPuck"
+        type="button"
+        role="slider"
+        aria-label="Drag to move through the story"
+        aria-valuemin="0"
+        aria-valuemax="5"
+        aria-valuenow="0"
+        aria-valuetext="Arrival"
+      ><span></span></button>
+    </div>
+    <span class="dock-hint" id="dockHint">drag</span>
   </nav>
-  <a class="chip mono" href="#whoami" data-hover><span class="dot"></span>SWE&nbsp;@&nbsp;BLUE&nbsp;CROSS</a>
-</header>
 
-<main>
-  <!-- ============ 01 hero ============ -->
-  <section class="hero" id="hero">
-    <p class="eyebrow mono reveal">01 — hello<span class="sep">/</span>SOFTWARE ENGINEER · WINNIPEG, CANADA 🇨🇦</p>
-    <h1 class="hero-title" aria-label="Qi Wang">
-      <span class="line"><span class="line-inner" data-split>QI</span></span>
-      <span class="line"><span class="line-inner accent" data-split>WANG</span></span>
-    </h1>
-    <div class="hero-ghost" aria-hidden="true">SARRIA</div>
-    <div class="hero-sub">
-      <p class="roles mono">crafting with <span class="role-word" id="roleWord">SwiftUI</span></p>
-      <p class="hero-bio">Design-minded engineer. Native-feeling products for iOS, Android &amp; web —<br/>and a camera for everything in between.</p>
-    </div>
-    <div class="scroll-cue mono"><span class="cue-line"></span>scroll to explore</div>
-    <div class="ticker mono" aria-hidden="true">
-      <div class="ticker-track" id="tickerTrack">
-        <span>SWIFT · SWIFTUI · FLUTTER · KOTLIN · COMPOSE · TYPESCRIPT · REACT · THREE.JS · NODE · GO · RUST · ON-DEVICE AI ·&nbsp;</span>
-        <span>SWIFT · SWIFTUI · FLUTTER · KOTLIN · COMPOSE · TYPESCRIPT · REACT · THREE.JS · NODE · GO · RUST · ON-DEVICE AI ·&nbsp;</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 02 manifesto ============ -->
-  <section class="manifesto" id="manifesto">
-    <p class="eyebrow mono">02 — ~/manifesto</p>
-    <div class="mani-stage">
-      <p class="mani-line" data-line>Small <em>details</em> carry the experience.</p>
-      <p class="mani-line" data-line><em>Motion</em> is meaning — never decoration.</p>
-      <p class="mani-line" data-line>The best system is the one you <em>don't notice</em>.</p>
-      <p class="mani-line" data-line><em>Shipping</em> is the only honest critic.</p>
-    </div>
-    <div class="mani-idx mono"><span id="maniIdx">01</span>/04</div>
-  </section>
-
-  <!-- ============ 03 whoami ============ -->
-  <section class="whoami" id="whoami">
-    <div class="who-left">
-      <p class="eyebrow mono">03 — ~/whoami</p>
-      <h2>Engineer,<br/>with taste.</h2>
-      <p class="who-bio">Mobile-first software engineer in Winnipeg 🇨🇦, currently building at Blue&nbsp;Cross. I ship native iOS &amp; Android, cross-platform Flutter, and the web &amp; backends that power them. I care about the last 4&nbsp;pixels.</p>
-      <div class="who-chips">
-        <span class="chip mono" data-hover>💼 SWE @ Blue Cross</span>
-        <span class="chip mono" data-hover>📍 Winnipeg, MB</span>
-        <span class="chip mono" data-hover>🛰 github/SarriaXD</span>
-        <span class="chip mono" data-hover>☕ mobile · web · backend</span>
-      </div>
-    </div>
-    <div class="terminal glass" id="terminal" data-hover>
-      <div class="term-bar">
-        <i class="tb r"></i><i class="tb y"></i><i class="tb g"></i>
-        <span class="term-title mono">sarria@winnipeg — zsh</span>
-      </div>
-      <pre class="term-body mono" id="termBody"></pre>
-    </div>
-  </section>
-
-  <!-- ============ 04 life / gallery ============ -->
-  <section class="gallery" id="life">
-    <div class="gallery-head">
-      <p class="eyebrow mono">04 — ~/life · photography</p>
-      <h2>Beyond the screen.</h2>
-      <p class="gal-sub">Engineer by trade, explorer at heart. Beyond the code — mountains, lakes, and the people I love.</p>
-    </div>
-    <div class="captions">
-      <div class="caption" data-cap="0">
-        <span class="cap-idx mono">01 / 03</span>
-        <h3>Lake Louise</h3>
-        <p>Canoeing the glacier water · Banff National Park</p>
-        <span class="coords mono">51.4254° N, 116.1773° W</span>
-      </div>
-      <div class="caption" data-cap="1">
-        <span class="cap-idx mono">02 / 03</span>
-        <h3>Moraine Lake</h3>
-        <p>Valley of the Ten Peaks · with my favourite person</p>
-        <span class="coords mono">51.3217° N, 116.1860° W</span>
-      </div>
-      <div class="caption" data-cap="2">
-        <span class="cap-idx mono">03 / 03</span>
-        <h3>Sulphur Mountain</h3>
-        <p>Above the Bow Valley · Banff Gondola summit</p>
-        <span class="coords mono">51.1152° N, 115.5731° W</span>
-      </div>
-    </div>
-    <div class="gal-hint mono">hover the photos ✦</div>
-    <div class="gallery-fallback">
-      <figure><img src="assets/banff-1.jpg" alt="Canoeing on Lake Louise" /><figcaption class="mono">Lake Louise</figcaption></figure>
-      <figure><img src="assets/banff-3.jpg" alt="Moraine Lake" /><figcaption class="mono">Moraine Lake</figcaption></figure>
-      <figure><img src="assets/banff-5.jpg" alt="Sulphur Mountain summit" /><figcaption class="mono">Sulphur Mountain</figcaption></figure>
-    </div>
-  </section>
-
-  <!-- ============ 05 stack ============ -->
-  <section class="stack" id="stack">
-    <p class="eyebrow mono">05 — ~/stack</p>
-    <h2>Tools of trade.</h2>
-    <div class="stack-groups">
-      <div class="stack-group">
-        <h4 class="mono">// mobile — the home turf</h4>
-        <div class="chips">
-          <span class="chip mono" data-hover>Swift</span><span class="chip mono" data-hover>SwiftUI</span><span class="chip mono" data-hover>Flutter</span><span class="chip mono" data-hover>Dart</span><span class="chip mono" data-hover>Kotlin</span><span class="chip mono" data-hover>Jetpack Compose</span>
+  <dialog class="settings-dialog glass-lens" id="settingsDialog" aria-labelledby="settingsTitle">
+    <form method="dialog">
+      <div class="dialog-head">
+        <div>
+          <p class="card-label">Experience</p>
+          <h2 id="settingsTitle">Tune the light</h2>
         </div>
+        <button class="icon-button pressable" value="cancel" aria-label="Close settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17" /></svg>
+        </button>
       </div>
-      <div class="stack-group">
-        <h4 class="mono">// web</h4>
-        <div class="chips">
-          <span class="chip mono" data-hover>TypeScript</span><span class="chip mono" data-hover>React</span><span class="chip mono" data-hover>Astro</span><span class="chip mono" data-hover>Three.js</span><span class="chip mono" data-hover>GSAP</span>
+
+      <div class="setting-row">
+        <div>
+          <strong>Motion</strong>
+          <span>Spring, parallax, and ambient movement</span>
         </div>
+        <button class="toggle pressable is-on" id="motionToggle" type="button" role="switch" aria-label="Motion" aria-checked="true"><i></i></button>
       </div>
-      <div class="stack-group">
-        <h4 class="mono">// backend & beyond</h4>
-        <div class="chips">
-          <span class="chip mono" data-hover>Node.js</span><span class="chip mono" data-hover>Spring</span><span class="chip mono" data-hover>Go</span><span class="chip mono" data-hover>Python</span><span class="chip mono" data-hover>Rust</span>
+
+      <div class="setting-row">
+        <div>
+          <strong>Sound</strong>
+          <span>Soft tones at story milestones</span>
         </div>
+        <button class="toggle pressable" id="soundToggle" type="button" role="switch" aria-label="Sound" aria-checked="false"><i></i></button>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ 06 work ============ -->
-  <section class="work" id="work">
-    <div class="work-pin">
-      <div class="work-head">
-        <p class="eyebrow mono">06 — ~/work · selected repos</p>
-        <h2>Things I've shipped.</h2>
-        <p class="work-hint mono">keep scrolling →</p>
+      <div class="setting-row">
+        <div>
+          <strong>Glass effects</strong>
+          <span>Blurred, translucent interface surfaces</span>
+        </div>
+        <button class="toggle pressable is-on" id="materialToggle" type="button" role="switch" aria-label="Glass effects" aria-checked="true"><i></i></button>
       </div>
-      <div class="work-track" id="workTrack">
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/Baobao" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">01</span>
-          <h3>Baobao</h3>
-          <p>Native iOS front-end for cc-bot — a personal AI chat client with liquid-glass UI.</p>
-          <div class="wc-tags mono"><span>Swift</span><span>SwiftUI</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/cc-bot" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">02</span>
-          <h3>cc-bot</h3>
-          <p>Multi-user chat server powering bot.sarria.ca — channels, bots, artifacts.</p>
-          <div class="wc-tags mono"><span>TypeScript</span><span>Node</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/Chat" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">03</span>
-          <h3>Chat</h3>
-          <p>Open-source SwiftUI chat framework — custom bubbles, media pickers, the works.</p>
-          <div class="wc-tags mono"><span>Swift</span><span>OSS</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/QiAgent" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">04</span>
-          <h3>QiAgent</h3>
-          <p>On-device LLM notebook. AI that never leaves your phone.</p>
-          <div class="wc-tags mono"><span>Swift</span><span>on-device AI</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/liquid-glass-compose" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">05</span>
-          <h3>liquid-glass-compose</h3>
-          <p>Liquid-glass component library for Jetpack Compose.</p>
-          <div class="wc-tags mono"><span>Kotlin</span><span>Compose</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-        <a class="work-card glass" data-hover href="https://github.com/SarriaXD/manitoba_driving_test" target="_blank" rel="noreferrer">
-          <span class="wc-idx mono">06</span>
-          <h3>manitoba driving test</h3>
-          <p>Driving-test prep app for Manitoba — Flutter, shipped on iOS &amp; Android.</p>
-          <div class="wc-tags mono"><span>Flutter</span><span>Dart</span></div>
-          <span class="wc-arrow">↗</span>
-          <span class="glare"></span>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ 07 contact ============ -->
-  <section class="contact" id="contact">
-    <p class="eyebrow mono">07 — ~/contact</p>
-    <h2 class="contact-title" data-split-words>Let's build something.</h2>
-    <p class="contact-sub">Engineering, design, or just trading photo spots —<br/>my inbox is always open. <span class="mono accent-text">✦</span></p>
-    <a class="cta glass mono" id="cta" href="mailto:sarria.qi.wang@gmail.com" data-hover>say hi ↗</a>
-    <div class="contact-links mono">
-      <a href="https://github.com/SarriaXD" target="_blank" rel="noreferrer" data-hover>GitHub</a>
-      <a href="https://www.linkedin.com/in/qi-wang-sarria" target="_blank" rel="noreferrer" data-hover>LinkedIn</a>
-      <a href="mailto:sarria.qi.wang@gmail.com" data-hover>Email</a>
-    </div>
-    <footer class="foot mono">
-      <span>© 2026 Qi Wang · Winnipeg</span>
-      <span class="foot-mid">three.js + gsap + taste</span>
-      <span>◐ particles: 12,000 · rendered with love ❤️</span>
-    </footer>
-  </section>
-</main>
+      <button class="reset-button pressable" id="resetButton" type="button">Reset memory nodes</button>
+      <p class="dialog-note">System preferences take priority where your browser exposes them. These controls stay on this device.</p>
+    </form>
+  </dialog>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<script type="module" src="app.js?v=5"></script>
+  <div class="gesture-layer" id="gestureLayer" aria-hidden="true"></div>
+  <div class="glyph-layer" id="glyphLayer" aria-hidden="true"></div>
+  <div class="toast glass-lens" id="storyToast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript-note">This story uses JavaScript for its scroll-driven light. The contact links remain available below.</div>
+  </noscript>
+
+  <script type="module" src="app.js?v=20260730-3"></script>
 </body>
 </html>

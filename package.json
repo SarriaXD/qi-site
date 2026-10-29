@@ -1,0 +1,25 @@
+{
+  "name": "qi-aurora-memory-river",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "node serve.ts",
+    "check": "node --check app.js",
+    "test": "playwright test",
+    "test:smoke": "playwright test tests/smoke.spec.js",
+    "test:webkit": "playwright test --project=mobile-webkit",
+    "test:visual": "playwright test tests/visual.spec.js",
+    "test:visual:update": "playwright test tests/visual.spec.js --update-snapshots",
+    "inspect:desktop": "node scripts/inspect-canvas.mjs --state arrival",
+    "inspect:mobile": "node scripts/inspect-canvas.mjs --mobile --state contact",
+    "inspect:public": "node scripts/inspect-public.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "pngjs": "7.0.0"
+  },
+  "dependencies": {
+    "three": "0.164.1"
+  }
+}

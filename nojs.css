@@ -1,0 +1,168 @@
+/* Progressive fallback: every portfolio fact and contact route remains readable
+   when modules are blocked or JavaScript is disabled. */
+html.no-js .load-veil,
+html.no-js .topbar,
+html.no-js .story-status,
+html.no-js .story-dock,
+html.no-js .settings-dialog,
+html.no-js .scroll-invitation,
+html.no-js .kinetic-word,
+html.no-js .craft-meter,
+html.no-js .contact-orb {
+  display: none !important;
+}
+
+html.no-js .hero-atmosphere {
+  display: none;
+}
+
+html.no-js body.is-loading .load-veil {
+  display: grid !important;
+}
+
+html.no-js .world .aurora,
+html.no-js .world .grain {
+  animation: none !important;
+}
+
+html.no-js .chapter,
+html.no-js .chapter-hero,
+html.no-js .chapter-signal,
+html.no-js .chapter-trajectory,
+html.no-js .chapter-craft,
+html.no-js .chapter-field,
+html.no-js .chapter-contact {
+  --enter: 1;
+  height: auto;
+  min-height: auto;
+}
+
+html.no-js .chapter + .chapter {
+  border-top-color: rgba(231, 250, 255, 0.08);
+}
+
+html.no-js .chapter-stage {
+  position: relative;
+  display: block;
+  height: auto;
+  min-height: auto;
+  overflow: visible;
+  padding: 5rem var(--page-pad);
+}
+
+html.no-js .hero-stage {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: var(--page-pad);
+  padding-left: var(--page-pad);
+}
+
+html.no-js .portrait-stage {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: min(82vw, 26rem);
+  height: 32rem;
+  margin: 0 auto;
+  transform: none;
+}
+
+html.no-js .portrait-cutout {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+html.no-js .hero-copy {
+  position: relative;
+  inset: auto;
+  margin: -8rem 0 0;
+}
+
+html.no-js .chapter-kicker,
+html.no-js .trajectory-intro,
+html.no-js .craft-title,
+html.no-js .field-heading {
+  position: relative;
+  inset: auto;
+  margin-bottom: 2rem;
+  opacity: 1;
+  transform: none;
+}
+
+html.no-js .story-card,
+html.no-js .journey,
+html.no-js .skill-orbit,
+html.no-js .principle-stack,
+html.no-js .github-ribbon {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  overflow: visible;
+  opacity: 1;
+  transform: none;
+}
+
+html.no-js .journey-track {
+  display: none;
+}
+
+html.no-js .journey-stop,
+html.no-js .skill-cluster,
+html.no-js .principle {
+  position: relative;
+  inset: auto;
+  margin: 0 0 1rem;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+html.no-js .trajectory-footnote {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+html.no-js .github-ribbon {
+  margin-top: 1rem;
+}
+
+html.no-js .contact-copy {
+  margin-top: 0;
+}
+
+html.no-js footer {
+  position: relative;
+  inset: auto;
+  margin-top: 3rem;
+}
+
+html.no-js .noscript-note {
+  position: relative;
+  inset: auto;
+  margin: 0 var(--page-pad) 2rem;
+  border: 1px solid rgba(231, 250, 255, 0.18);
+}
+
+@media (min-width: 56rem) {
+  html.no-js .hero-copy {
+    width: min(42rem, 100%);
+    transform: none;
+  }
+
+  html.no-js .story-card,
+  html.no-js .journey,
+  html.no-js .skill-orbit,
+  html.no-js .principle-stack,
+  html.no-js .github-ribbon {
+    width: min(42rem, 100%);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
